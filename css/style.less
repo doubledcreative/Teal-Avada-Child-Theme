@@ -1,5 +1,5 @@
 /*
-Theme Name: Avada Child Theme - TFSE
+Theme Name: Avada Child Theme - Teal
 Author: Tom Brookes & Tom Dent
 Author URI: http://www.doubledcreative.com
 */
@@ -39,7 +39,7 @@ Author URI: http://www.doubledcreative.com
 	background-clip:padding-box!important;
 }
 
-.gradient (@degree: 20deg, @startColor: #000, @endColor: white) {
+.gradient (@degree: -45deg, @startColor: #000, @endColor: white) {
 	background-color: @startColor;
 	background: -webkit-gradient(linear, @degree, from(@startColor), to(@endColor));
 	background: -webkit-linear-gradient(@degree, @startColor, @endColor);
@@ -57,19 +57,90 @@ Author URI: http://www.doubledcreative.com
 
 @white:  	#FFF!important;		/* White			*/
 @black:		#000!important;		/* Black 			*/
-@grey1:		#F8F8F8!important;	/* Light Grey		*/
+@blue:		#122E43!important;	/* Dark Blue 		*/
+@orange:	#f7941d!important;	/* Orange			*/
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /* MAIN */
 
-body{-webkit-font-smoothing:antialiased!important;overflow:hidden;}
+body{-webkit-font-smoothing:subpixel-antialiased!important;overflow:hidden;}
 a:hover{.transition (@transition: all 0.2s ease-in-out);}
 .hover-type-zoomin:hover{
 	.fusion-column-inner-bg-image{opacity:1!important;}
 }
 iframe{border:none!important;}
 
+.fusion-middle-logo-menu-logo{display:none;}
+.teal-who{box-shadow:0 -20px 20px rgba(0,0,0,0.1);}
+.teal-what{box-shadow:0 20px 20px rgba(0,0,0,0.1);}
+
+.teal-color-grad, .fusion-header{.gradient (@degree: -45deg, @startColor: #00749b, @endColor: #00acab);}
+.teal-mono-grad{.gradient (@degree: -45deg, @startColor: #FFFFFF, @endColor: #f0f0f0);}
+.teal-header-thin{padding-left:10%;padding-right:10%;}
+.teal-logo-footer{width:100px;}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/* NAVIGATION */
+
+.fusion-header{height:80px!important;
+	.fusion-main-menu{
+		ul{margin-top:22px;
+			li{
+				a{line-height:22px!important;height:auto!important;color:@white;padding:6px 25px;.border-radius (@border-radius: 20px);
+					&:hover{background:@orange;}
+				}
+			}
+		}
+	}
+}
+
+
+
+.fusion-is-sticky .fusion-main-menu .current-menu-ancestor > a, .fusion-is-sticky .fusion-main-menu .current-menu-item > a, .fusion-is-sticky .fusion-main-menu .current-menu-item > a:before, .fusion-is-sticky .fusion-main-menu .current-menu-parent > a, .fusion-is-sticky .fusion-main-menu .current_page_item > a, .fusion-main-menu .current-menu-ancestor > a, .fusion-main-menu .current-menu-item > a, .fusion-main-menu .current-menu-item > a:before, .fusion-main-menu .current-menu-parent > a, .fusion-main-menu .current_page_item > a{background:#036b8b;}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/* GRAVITY FORMS */
+
+.gform_wrapper{margin:0 auto!important;/*width:60%;*/
+	.gform_body{
+		.gform_fields{
+			.gfield{
+				.ginput_container{
+					input, textarea{padding:15px 20px!important;height:auto!important;margin:0!important;border:5px solid!important;.border-radius (@border-radius: 10px);border-color:rgba(255,255,255,0.4)!important;.bg-clip();font-size:22px;color:@blue;
+						&:focus{outline:none;background:#FFFDE4!important;.transition();box-shadow:none;border-color:@blue!important;color:@blue;}
+					}
+					select{padding:15px 20px!important;height:64px!important;margin:0!important;border:5px solid!important;.border-radius (@border-radius: 10px);border-color:rgba(255,255,255,0.4)!important;.bg-clip();font-size:22px;color:@blue;
+						option{color:@blue;}
+					}
+					textarea{.border-radius (@border-radius: 10px);padding-top:25px!important;font-family:"Source Sans Pro";font-size:22px;
+						&:focus{outline:none;background:#FFFDE4!important;.transition();box-shadow:none;border-color:@blue!important;color:@blue;}
+					}
+					.name_first, .name_last{
+						label{display:none;}
+					}
+				}
+			}
+		}
+	}
+	.gform_footer{width:100%;display:block;margin:40px 0 0 0!important;padding:0!important;
+		input[type=submit]{font-family:"Source Sans Pro";font-weight:600;background:@orange;display:block!important;margin:0 auto!important;font-size:22px!important;line-height:26px!important;padding:14px 60px!important;.border-radius (@border-radius: 40px)!important;border-color:rgba(255,255,255,0.4)!important;.bg-clip();
+			&:hover{.transition();background-color:@white!important;color:@orange;border-color:@white!important;}
+		}
+	}
+}
+
+.kd-contact-form{
+	.gform_wrapper{width:80%!important;}
+}
+
+::-webkit-input-placeholder{color:@blue;}
+:-moz-placeholder{color:@blue;}
+::-moz-placeholder{color:@blue;}
+:-ms-input-placeholder{color:@blue;}
+.placeholder{color:@blue;}
 
 /* ////////////////////////////////////////////////////////////////////////////////////////////// */
 /* MEDIA QUERIES //////////////////////////////////////////////////////////////////////////////// */
