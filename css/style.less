@@ -49,7 +49,7 @@ Author URI: http://www.doubledcreative.com
 }
 
 .uppercase(){text-transform:uppercase!important;}
-
+ 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -79,6 +79,7 @@ iframe{border:none!important;}
 .teal-mono-grad{.gradient (@degree: -45deg, @startColor: #FFFFFF, @endColor: #f0f0f0);}
 .teal-header-thin{padding-left:10%;padding-right:10%;}
 .teal-logo-footer{width:100px;}
+.teal-icon{background:#eee;width:60%;height:auto;margin:0 20% 20px 20%!important;.border-radius (@border-radius:200px);}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -100,12 +101,29 @@ iframe{border:none!important;}
 
 .fusion-is-sticky .fusion-main-menu .current-menu-ancestor > a, .fusion-is-sticky .fusion-main-menu .current-menu-item > a, .fusion-is-sticky .fusion-main-menu .current-menu-item > a:before, .fusion-is-sticky .fusion-main-menu .current-menu-parent > a, .fusion-is-sticky .fusion-main-menu .current_page_item > a, .fusion-main-menu .current-menu-ancestor > a, .fusion-main-menu .current-menu-item > a, .fusion-main-menu .current-menu-item > a:before, .fusion-main-menu .current-menu-parent > a, .fusion-main-menu .current_page_item > a{background:#036b8b;}
 
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/* MAIN */
+
+.teal-top{
+	.fullwidth-overlay{.gradient (@degree: -45deg, @startColor: #004661, @endColor: #04121c);opacity:0.9!important;}
+	.teal-logo{width:240px;margin-bottom:10px;padding:20px;}
+	.teal-main-h1{padding:0 30%!important;
+		h1{color:@white;text-shadow:0 0 30px rgba(0,0,0,0.5);}
+	}
+}
+
+.teal-button{font-family:"Source Sans Pro";font-weight:600;background:@orange;margin:0 auto!important;font-size:22px!important;line-height:26px!important;padding:14px 60px!important;.border-radius (@border-radius: 40px)!important;border-color:rgba(255,255,255,0.4)!important;.bg-clip();
+		&:hover{.transition();background-color:@white!important;color:@orange;border-color:@white!important;}
+	}
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /* GRAVITY FORMS */
 
 .gform_wrapper{margin:0 auto!important;/*width:60%;*/
-	.gform_body{
+	.gform_body{width:100%!important;
 		.gform_fields{
 			.gfield{
 				.ginput_container{
@@ -147,7 +165,36 @@ iframe{border:none!important;}
 /* ////////////////////////////////////////////////////////////////////////////////////////////// */
 
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 800px) {
 
+	header{display:none!important;}
+	
+	.teal-top{
+		.teal-main-h1{padding:0 10%!important;}
+	}
+	
+	.teal-header-thin{padding-left:0;padding-right:0;
+		h1{font-size:24px;line-height:34px;}
+	}
+	
+	.fusion-title{margin-bottom:30px!important;
+		h2{font-size:36px!important;line-height:44px!important;}
+		h6{font-size:24px!important;line-height:34px!important;}
+	}
+	
+	.teal-form{
+		.fusion-column-wrapper{padding:0!important;}
+	}
+	
+	.fusion-footer-widget-area{
+		p{font-size:16px;line-height:26px;}
+	}
+	
+	.gform_wrapper .gform_body .gform_fields .gfield .ginput_container input, .gform_wrapper .gform_body .gform_fields .gfield .ginput_container textarea{padding:8px 15px!important;}
+}
+
+@media only screen and (max-width: 500px) {
+	
+	.teal-full{padding-left:0!important;padding-right:0!important;}
 	
 }
