@@ -1,10 +1,35 @@
-/*
-Theme Name: Avada Child Theme - Teal
+
+/*//////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+Teal
+
+Theme Name: Avada Child Theme
 Author: Tom Brookes & Tom Dent
 Author URI: http://www.doubledcreative.com
-*/
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+Contents
+
+- Less Mixins
+- Site Colours
+- Global Styles
+- Navigation
+- Main Styles
+- Gravity Forms
+- Media Queries
+	- 800px
+	- 500px
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////*/
+
 
 /* Less Mixins */
+
 
 .transition (@transition: all 0.2s ease-in-out) {
 	-webkit-transition:@transition;
@@ -53,37 +78,35 @@ Author URI: http://www.doubledcreative.com
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/* Colours */
+
+/* Site Colours */
+
 
 @white:  	#FFF!important;		/* White			*/
 @black:		#000!important;		/* Black 			*/
 @blue:		#122E43!important;	/* Dark Blue 		*/
 @orange:	#f7941d!important;	/* Orange			*/
 
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/* MAIN */
 
-body{-webkit-font-smoothing:subpixel-antialiased!important;overflow:hidden;}
+/* GLOBAL STYLES */
+
+
+body{overflow:hidden;}
 a:hover{.transition (@transition: all 0.2s ease-in-out);}
 .hover-type-zoomin:hover{
 	.fusion-column-inner-bg-image{opacity:1!important;}
 }
 iframe{border:none!important;}
 
-.fusion-middle-logo-menu-logo{display:none;}
-.teal-who{box-shadow:0 -20px 20px rgba(0,0,0,0.1);}
-.teal-what{box-shadow:0 20px 20px rgba(0,0,0,0.1);}
-
-.teal-color-grad, .fusion-header{.gradient (@degree: -45deg, @startColor: #00749b, @endColor: #00acab);}
-.teal-mono-grad{.gradient (@degree: -45deg, @startColor: #FFFFFF, @endColor: #f0f0f0);}
-.teal-header-thin{padding-left:10%;padding-right:10%;}
-.teal-logo-footer{width:100px;}
-.teal-icon{background:#eee;width:60%;height:auto;margin:0 20% 20px 20%!important;.border-radius (@border-radius:200px);}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
+
 /* NAVIGATION */
+
 
 .fusion-header{height:80px!important;
 	.fusion-main-menu{
@@ -104,7 +127,18 @@ iframe{border:none!important;}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/* MAIN */
+
+/* Main Styles */
+
+
+.fusion-middle-logo-menu-logo{display:none;}
+.teal-who{box-shadow:0 -20px 20px rgba(0,0,0,0.1);}
+.teal-what{box-shadow:0 20px 20px rgba(0,0,0,0.1);}
+.teal-color-grad, .fusion-header{.gradient (@degree: -45deg, @startColor: #00749b, @endColor: #00acab);}
+.teal-mono-grad{.gradient (@degree: -45deg, @startColor: #FFFFFF, @endColor: #f0f0f0);}
+.teal-header-thin{padding-left:10%;padding-right:10%;}
+.teal-logo-footer{width:100px;}
+.teal-icon{background:#eee;width:60%;height:auto;margin:0 20% 20px 20%!important;.border-radius (@border-radius:200px);}
 
 .teal-top{
 	.fullwidth-overlay{.gradient (@degree: -45deg, @startColor: #004661, @endColor: #04121c);opacity:0.9!important;}
@@ -115,25 +149,37 @@ iframe{border:none!important;}
 }
 
 .teal-button{font-family:"Source Sans Pro";font-weight:600;background:@orange;margin:0 auto!important;font-size:22px!important;line-height:26px!important;padding:14px 60px!important;.border-radius (@border-radius: 40px)!important;border-color:rgba(255,255,255,0.4)!important;.bg-clip();
-		&:hover{.transition();background-color:@white!important;color:@orange;border-color:@white!important;}
-	}
+	&:hover{.transition();background-color:@white!important;color:@orange;border-color:@white!important;}
+}
+
+.teal-form{
+	b{font-weight:600!important;}
+}
+
+.modal-header{padding:20px 40px;}
+.modal-body{padding:20px 40px;}
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/* GRAVITY FORMS */
 
-.gform_wrapper{margin:0 auto!important;/*width:60%;*/
+/* Gravity Forms */
+
+
+/* Global GF Form Styling */
+
+.gform_wrapper{margin:0 auto!important;
 	.gform_body{width:100%!important;
 		.gform_fields{
-			.gfield{
+			.gfield{padding:0!important;
 				.ginput_container{
-					input, textarea{padding:15px 20px!important;height:auto!important;margin:0!important;border:5px solid!important;.border-radius (@border-radius: 10px);border-color:rgba(255,255,255,0.4)!important;.bg-clip();font-size:22px;color:@blue;
+					input, textarea{padding:15px 20px!important;height:auto!important;margin:0!important;border:5px solid!important;.border-radius (@border-radius: 10px);border-color:rgba(255,255,255,0.4)!important;.bg-clip();font-size:20px!important;color:@blue;
 						&:focus{outline:none;background:#FFFDE4!important;.transition();box-shadow:none;border-color:@blue!important;color:@blue;}
 					}
-					select{padding:15px 20px!important;height:64px!important;margin:0!important;border:5px solid!important;.border-radius (@border-radius: 10px);border-color:rgba(255,255,255,0.4)!important;.bg-clip();font-size:22px;color:@blue;
+					select{padding:15px 20px!important;height:64px!important;margin:0!important;border:5px solid!important;.border-radius (@border-radius: 10px);border-color:rgba(255,255,255,0.4)!important;.bg-clip();font-size:20px!important;color:@blue;
 						option{color:@blue;}
 					}
-					textarea{.border-radius (@border-radius: 10px);padding-top:25px!important;font-family:"Source Sans Pro";font-size:22px;
+					textarea{.border-radius (@border-radius: 10px);padding-top:20px!important;font-family:"Source Sans Pro";font-size:20px!important;
 						&:focus{outline:none;background:#FFFDE4!important;.transition();box-shadow:none;border-color:@blue!important;color:@blue;}
 					}
 					.name_first, .name_last{
@@ -150,25 +196,32 @@ iframe{border:none!important;}
 			}
 		}
 	}
-	.gform_footer{width:100%;display:block;margin:40px 0 0 0!important;padding:0!important;
+	.gform_footer{width:100%;display:block;margin:40px 0 30px 0!important;padding:0!important;
 		input[type=submit]{font-family:"Source Sans Pro";font-weight:600;background:@orange;display:block!important;margin:0 auto!important;font-size:22px!important;line-height:26px!important;padding:14px 60px!important;.border-radius (@border-radius: 40px)!important;border-color:rgba(255,255,255,0.4)!important;.bg-clip();
 			&:hover{.transition();background-color:@white!important;color:@orange;border-color:@white!important;}
 		}
 	}
 }
 
-.kd-contact-form{
-	.gform_wrapper{width:80%!important;}
+/* HTML Field for 3x Modal Window Buttons */
+
+#field_1_10{width:100%;
+	.fusion-button-wrapperleft{display:inline-block;width:32.9%;}
 }
 
-.teal-form-html{padding:15px 20px!important;margin:0!important;border:5px solid!important;.border-radius (@border-radius: 10px);border-color:#122E43!important;.bg-clip();font-size:22px;color:@blue;background:#FFFDE4!important;width:97.5%!important;}
-.teal-modal-button{padding:0;margin:-74px -100px 0 0!important;display:inline-block;float:right;}
+.teal-mod-button{background:rgba(16, 46, 68, 0.5)!important;font-size:16px;font-weight:300;text-transform:none;padding:10px 20px;
+	&:hover{background:rgba(16, 46, 68, 1)!important;color:@white!important;}
+}
+
+/*.teal-form-html{padding:15px 20px!important;margin:0!important;border:5px solid!important;.border-radius (@border-radius: 10px);border-color:#122E43!important;.bg-clip();font-size:22px;color:@blue;background:#FFFDE4!important;width:97.5%!important;}
+.teal-modal-button{padding:0;margin:-74px -100px 0 0!important;display:inline-block;float:right;}*/
 
 ::-webkit-input-placeholder{color:@blue;}
 :-moz-placeholder{color:@blue;}
 ::-moz-placeholder{color:@blue;}
 :-ms-input-placeholder{color:@blue;}
 .placeholder{color:@blue;}
+
 
 /* ////////////////////////////////////////////////////////////////////////////////////////////// */
 /* MEDIA QUERIES //////////////////////////////////////////////////////////////////////////////// */
@@ -196,12 +249,17 @@ iframe{border:none!important;}
 		.fusion-column-wrapper{padding:0!important;}
 	}
 	
+	#field_1_10{
+		.fusion-button-wrapperleft{display:inline-block;width:100%;margin:5px 0 5px;}
+	}
+	
 	.fusion-footer-widget-area{
 		p{font-size:16px;line-height:26px;}
 	}
 	
 	.gform_wrapper .gform_body .gform_fields .gfield .ginput_container input, .gform_wrapper .gform_body .gform_fields .gfield .ginput_container textarea, .gform_wrapper .gform_body .gform_fields .gfield .ginput_container select{padding:8px 15px!important;font-size:18px!important;}
 }
+
 
 @media only screen and (max-width: 500px) {
 	
