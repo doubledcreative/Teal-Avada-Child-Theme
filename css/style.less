@@ -74,6 +74,8 @@ Contents
 }
 
 .uppercase(){text-transform:uppercase!important;}
+
+.form-borders(){border:5px solid!important;.border-radius (@border-radius: 10px);border-color:rgba(255,255,255,0.4)!important;.bg-clip();}
  
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -94,7 +96,7 @@ Contents
 /* GLOBAL STYLES */
 
 
-body{overflow:hidden;}
+body{overflow:scroll!important;}
 a:hover{.transition (@transition: all 0.2s ease-in-out);}
 .hover-type-zoomin:hover{
 	.fusion-column-inner-bg-image{opacity:1!important;}
@@ -159,6 +161,32 @@ iframe{border:none!important;}
 .modal-header{padding:20px 40px;}
 .modal-body{padding:20px 40px;}
 
+/* Standard White Box Element */
+
+.teal-main{
+	.fusion-row{box-shadow:0 20px 20px rgba(0,0,0,0.1);}
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/* BUILDER ELEMENTS */
+
+
+/* Pricing Table */
+
+.pricing-table-1{
+	.panel-wrapper{
+		&:hover{cursor:default;}
+		.panel-container{.form-borders();padding:0!important;background:none!important;
+			.fusion-panel{background:none!important;border:none;
+				.panel-heading{border-top-left-radius:6px;border-top-right-radius:6px;}
+				.pricing-row{border-bottom-left-radius:6px;border-bottom-right-radius:6px;}
+			}
+		}
+	}
+}
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -173,10 +201,10 @@ iframe{border:none!important;}
 		.gform_fields{
 			.gfield{padding:0!important;
 				.ginput_container{
-					input, textarea{padding:15px 20px!important;height:auto!important;margin:0!important;border:5px solid!important;.border-radius (@border-radius: 10px);border-color:rgba(255,255,255,0.4)!important;.bg-clip();font-size:20px!important;color:@blue;
+					input, textarea{padding:15px 20px!important;height:auto!important;margin:0!important;.form-borders();font-size:20px!important;color:@blue;
 						&:focus{outline:none;background:#FFFDE4!important;.transition();box-shadow:none;border-color:@blue!important;color:@blue;}
 					}
-					select{padding:15px 20px!important;height:64px!important;margin:0!important;border:5px solid!important;.border-radius (@border-radius: 10px);border-color:rgba(255,255,255,0.4)!important;.bg-clip();font-size:20px!important;color:@blue;
+					select{padding:15px 20px!important;height:64px!important;margin:0!important;.form-borders();font-size:20px!important;color:@blue;
 						option{color:@blue;}
 					}
 					textarea{.border-radius (@border-radius: 10px);padding-top:20px!important;font-family:"Source Sans Pro";font-size:20px!important;
@@ -205,12 +233,20 @@ iframe{border:none!important;}
 
 /* HTML Field for 3x Modal Window Buttons */
 
-#field_1_10{width:100%;
+#field_1_10, #field_3_10{width:100%;
 	.fusion-button-wrapperleft{display:inline-block;width:32.9%;}
 }
 
 .teal-mod-button{background:rgba(16, 46, 68, 0.5)!important;font-size:16px;font-weight:300;text-transform:none;padding:10px 20px;
 	&:hover{background:rgba(16, 46, 68, 1)!important;color:@white!important;}
+}
+
+/* Ebook Price Field */
+
+.teal-price{
+	.ginput_container{background:@blue;text-align:center;font-weight:600;.form-borders();padding:15px 20px!important;height:auto!important;margin:0!important;font-size:24px!important;color:@blue;
+			span{color:@white!important;}
+		}
 }
 
 /* Float Left and Right for Single Line Text Fields */
