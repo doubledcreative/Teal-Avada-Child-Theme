@@ -99,7 +99,7 @@ Contents
 body{overflow:scroll!important;}
 a:hover{.transition (@transition: all 0.2s ease-in-out);}
 .hover-type-zoomin:hover{
-	.fusion-column-inner-bg-image{opacity:1!important;}
+	img{opacity:1!important;}
 }
 iframe{border:none!important;}
 
@@ -122,9 +122,26 @@ iframe{border:none!important;}
 	}
 }
 
+.fusion-mobile-menu-design-modern{
+	.fusion-header{
+		.fusion-mobile-menu-icons{
+			a{font-size:38px;}
+		}
+		.fusion-mobile-nav-holder{
+			.fusion-mobile-nav-item{
+				a{height:60px;line-height:60px;font-weight:600;
+					&:hover{color:@white;}
+				}
+			}
+			&:hover{color:@white;}
+		}
+	}
+}
+
+.fusion-mobile-current-nav-item > a{background:@white;}
 
 
-.fusion-is-sticky .fusion-main-menu .current-menu-ancestor > a, .fusion-is-sticky .fusion-main-menu .current-menu-item > a, .fusion-is-sticky .fusion-main-menu .current-menu-item > a:before, .fusion-is-sticky .fusion-main-menu .current-menu-parent > a, .fusion-is-sticky .fusion-main-menu .current_page_item > a, .fusion-main-menu .current-menu-ancestor > a, .fusion-main-menu .current-menu-item > a, .fusion-main-menu .current-menu-item > a:before, .fusion-main-menu .current-menu-parent > a, .fusion-main-menu .current_page_item > a{background:#036b8b;}
+.fusion-is-sticky .fusion-main-menu .current-menu-ancestor > a, .fusion-is-sticky .fusion-main-menu .current-menu-item > a, .fusion-is-sticky .fusion-main-menu .current-menu-item > a:before, .fusion-is-sticky .fusion-main-menu .current-menu-parent > a, .fusion-is-sticky .fusion-main-menu .current_page_item > a, .fusion-main-menu .current-menu-ancestor > a, .fusion-main-menu .current-menu-item > a, .fusion-main-menu .current-menu-item > a:before, .fusion-main-menu .current-menu-parent > a, .fusion-main-menu .current_page_item > a{background:none;}
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -145,9 +162,10 @@ iframe{border:none!important;}
 .teal-top{
 	.fullwidth-overlay{.gradient (@degree: -45deg, @startColor: #004661, @endColor: #04121c);opacity:0.9!important;}
 	.teal-logo{width:240px;margin-bottom:10px;padding:20px;}
-	.teal-main-h1{padding:0 30%!important;
-		h1{color:@white;text-shadow:0 0 30px rgba(0,0,0,0.5);}
+	.fusion-title{margin-bottom:0!important;
+		h2{color:@white;text-shadow:0 0 30px rgba(0,0,0,0.5);font-weight:200!important;}
 	}
+	.fusion-button{margin-top:30px!important;}
 }
 
 .teal-button{font-family:"Source Sans Pro";font-weight:600;background:@orange;margin:0 auto!important;font-size:22px!important;line-height:26px!important;padding:14px 60px!important;.border-radius (@border-radius: 40px)!important;border-color:rgba(255,255,255,0.4)!important;.bg-clip();
@@ -156,6 +174,12 @@ iframe{border:none!important;}
 
 .teal-form{
 	b{font-weight:600!important;}
+}
+
+.post-content{
+	p{
+		b, strong{color:@blue;}
+	}
 }
 
 .modal-header{padding:20px 40px;}
@@ -186,6 +210,55 @@ iframe{border:none!important;}
 		}
 	}
 }
+
+
+/* Pricing Table - Further Advice */
+
+.pricing-table-further-advice{margin-bottom: 30px!important;
+	.panel-wrapper{
+		&:hover{cursor:default;}
+		.panel-container{.form-borders();padding:0!important;background:none!important;
+			.fusion-panel{background:none!important;border:none;
+				.panel-heading{border-top-left-radius:6px;border-top-right-radius:6px;}
+				.pricing-row{border-bottom-left-radius:0;border-bottom-right-radius:0;}
+				.list-group{
+					.list-group-item{min-height:85px;display:table;width:100.3%;line-height:26px;color:#132e42;
+						&:last-of-type{border-bottom-left-radius:6px;border-bottom-right-radius:6px;border-bottom:none;}  
+						.fa{display:table-cell;vertical-align:middle;font-size:30px;color:#e1262d;}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+/* Pricing Table - Further Advice With Buttons 
+
+.pricing-table-further-advice{margin-bottom: 30px!important;
+	.panel-wrapper{
+		&:hover{cursor:default;}
+		.panel-container{.form-borders();padding:0!important;background:none!important;
+			.fusion-panel{background:none!important;border:none;
+				.panel-heading{border-top-left-radius:6px;border-top-right-radius:6px;}
+				.pricing-row{border-bottom-left-radius:0;border-bottom-right-radius:0;}
+				.list-group{
+					li{min-height:85px;display:table;width:100.5%;line-height:26px;color:#132e42;
+						.fa{display:table-cell;vertical-align:middle;font-size:30px;color:#e1262d;}
+					}
+				}
+				.panel-footer{border-bottom-left-radius:6px;border-bottom-right-radius:6px;padding: 25px 15px!important;
+					.fusion-button{background-color: @orange; color: @white; border-radius: 20px!important; padding: 10px 35px!important;
+						&:hover{background-color: @blue; 
+							.fusion-button-text{color: @white;}
+						}
+					}
+				}	
+			}
+		}
+	}
+	
+*/
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -222,6 +295,7 @@ iframe{border:none!important;}
 				}
 				label{color:@white;font-size:22px;font-weight:400;}	
 			}
+			.teal-form-html{background:@white;.form-borders();padding:40px!important;}
 		}
 	}
 	.gform_footer{width:100%;display:block;margin:40px 0 30px 0!important;padding:0!important;
@@ -249,6 +323,36 @@ iframe{border:none!important;}
 		}
 }
 
+/* Form on White BG */
+
+.teal-full{
+	.gform_wrapper{margin:0 auto!important;
+		.gform_body{width:100%!important;
+			.gform_fields{
+				.gfield{padding:0!important;
+					.ginput_container_radio{
+							.gfield_radio{
+								li{
+									label{font-size:18px!important;font-weight:300;margin-top:0!important;}
+								}
+							}
+					}
+					label{color:@blue;font-size:22px;font-weight:400;margin-top:20px;}
+					.ginput_container{
+						input, textarea{.form-borders();background:#FFFDE4;border-color:rgba(16, 46, 68, 0.2)!important;
+						}
+					}
+				}
+			}
+		}
+		.gform_footer{
+		input[type=submit]{
+			&:hover{background-color:@blue!important;color:@white;border-color:@blue!important;}
+		}
+	}
+	}
+}
+
 /* Float Left and Right for Single Line Text Fields */
 
 .grav_half_left, .grav_half_right{width:49%;clear:none!important;}
@@ -264,18 +368,71 @@ iframe{border:none!important;}
 .placeholder{color:@blue;}
 
 
+
 /* ////////////////////////////////////////////////////////////////////////////////////////////// */
 /* MEDIA QUERIES //////////////////////////////////////////////////////////////////////////////// */
 /* ////////////////////////////////////////////////////////////////////////////////////////////// */
 
 
-@media only screen and (max-width: 800px) {
 
-	header{display:none!important;}
+@media only screen and (max-width: 1100px) {
 	
-	.teal-top{
-		.teal-main-h1{padding:0 10%!important;}
+	
+	.teal-pricing-container{
+		.fusion-column-wrapper{padding:0px 40px!important;}
 	}
+	
+	.fusion-header{
+		.fusion-main-menu{
+			ul{
+				li{
+					a{padding:6px 15px;
+					}
+				}
+			}
+		}
+	}
+	
+	
+	/* Pricing Table - Further Advice */
+
+	.pricing-table-further-advice{
+		.panel-wrapper{
+			.panel-container{
+				.fusion-panel{
+					.panel-heading{padding: 15px 10px!important;
+						h3{font-size:25px;line-height:32px;}
+					}
+					.list-group{
+						.list-group-item{min-height:110px;}
+					}
+				}
+			}
+		}
+	}
+	
+	
+}
+
+
+@media only screen and (max-width: 850px) {
+
+		.fusion-header{
+			.fusion-main-menu{
+				ul{
+					li{
+						a{padding:6px 10px;
+						}
+					}
+				}
+			}
+		}
+
+}
+
+
+@media only screen and (max-width: 800px) {
+	
 	
 	.teal-header-thin{padding-left:0;padding-right:0;
 		h1{font-size:24px;line-height:34px;}
@@ -299,7 +456,40 @@ iframe{border:none!important;}
 	}
 	
 	.gform_wrapper .gform_body .gform_fields .gfield .ginput_container input, .gform_wrapper .gform_body .gform_fields .gfield .ginput_container textarea, .gform_wrapper .gform_body .gform_fields .gfield .ginput_container select{padding:8px 15px!important;font-size:18px!important;}
+	
+	.images-container{display: none;}
+	
+	.centre-button{
+		.fusion-button-wrapper{display:block!important; text-align:center; float:none!important; margin-left: 0!important; margin-right: 0!important;}
+	}
+
+
+	////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+	/* Pricing Table - Bottom Margin */
+	.panel-wrapper{margin-bottom: 20px!important;}
+
+	/* Pricing Table Container - Top Marin */
+	.teal-pricing-container{
+		.pricing-table-column{margin-top: 80px!important;}
+	}
+	
+	/* Pricing Table - Further Advice */
+	.pricing-table-further-advice{
+		.panel-wrapper{
+			.panel-container{
+				.fusion-panel{
+					.list-group{
+						.list-group-item{min-height:0;width:100%;}
+					}
+				}
+			}
+		}
+	}
+	
 }
+
 
 
 @media only screen and (max-width: 500px) {
