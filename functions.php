@@ -125,3 +125,5 @@ function gform_form_input_autocomplete( $input, $field, $value, $lead_id, $form_
 	}
 	return $input;
 }
+
+add_filter("gform_confirmation_anchor", create_function("","return true;"));
