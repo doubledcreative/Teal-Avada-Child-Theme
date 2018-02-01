@@ -23,6 +23,14 @@ Contents
 - Media Queries
 	- 800px
 	- 500px
+	
+	
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+/* LESS CSS IMPORTS */
+
+@import "popup-form.less";
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////*/
@@ -83,18 +91,17 @@ Contents
 
 /* Site Colours */
 
-
-@white:  	#FFF!important;		/* White			*/
-@black:		#000!important;		/* Black 			*/
-@blue:		#122E43!important;	/* Dark Blue 		*/
-@orange:	#f7941d!important;	/* Orange			*/
+@white:  	#FFF!important;			/* White		*/
+@black:		#000!important;			/* Black 		*/
+@blue:		#122E43!important;		/* Dark Blue 	*/
+@orange:	#f7941d!important;		/* Orange		*/
+@grey:		#f3f3f3!important;		/* Grey			*/
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 /* GLOBAL STYLES */
-
 
 body{overflow:scroll!important;}
 a:hover{.transition (@transition: all 0.2s ease-in-out);}
@@ -109,40 +116,42 @@ iframe{border:none!important;}
 
 /* NAVIGATION */
 
-
-.fusion-header{height:80px!important;
-	.fusion-main-menu{
-		ul{margin-top:22px;
-			li{
-				a{line-height:22px!important;height:auto!important;color:@white;padding:6px 25px;.border-radius (@border-radius: 20px);
-					&:hover{background:@orange;}
+.fusion-header-v1{
+	.fusion-header{padding-top: 0!important; padding-bottom: 0!important;
+		.fusion-main-menu{
+			ul{margin-top: 41px;
+				li{
+					a{line-height:22px!important;height:auto!important;color:@white;padding:6px 25px;.border-radius (@border-radius: 20px);
+						&:hover{background:@orange;}
+					}
+				}
+				.menu-item-343{
+					a{background: @orange;
+						&:hover{background: @white; color: @orange;}
+					}
+				}
+				.current_page_item{
+					a{background: @blue; color: @white;
+						&:hover{background: @orange; color: @white;}
+					}
 				}
 			}
 		}
-	}
-}
-
-.fusion-mobile-menu-design-modern{
-	.fusion-header{
-		.fusion-mobile-menu-icons{
-			a{font-size:38px;}
-		}
-		.fusion-mobile-nav-holder{
-			.fusion-mobile-nav-item{
-				a{height:60px;line-height:60px;font-weight:600;
-					&:hover{color:@white;}
+		.fusion-sticky-menu{
+			ul{margin-top: 15px;
+				.menu-item-343{
+					a{background: @orange;
+						&:hover{background: @white; color: @orange;}
+					}
 				}
 			}
-			&:hover{color:@white;}
 		}
 	}
 }
 
 .fusion-mobile-current-nav-item > a{background:@white;}
 
-
 .fusion-is-sticky .fusion-main-menu .current-menu-ancestor > a, .fusion-is-sticky .fusion-main-menu .current-menu-item > a, .fusion-is-sticky .fusion-main-menu .current-menu-item > a:before, .fusion-is-sticky .fusion-main-menu .current-menu-parent > a, .fusion-is-sticky .fusion-main-menu .current_page_item > a, .fusion-main-menu .current-menu-ancestor > a, .fusion-main-menu .current-menu-item > a, .fusion-main-menu .current-menu-item > a:before, .fusion-main-menu .current-menu-parent > a, .fusion-main-menu .current_page_item > a{background:none;}
-
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -232,7 +241,6 @@ iframe{border:none!important;}
 	}
 }
 
-
 /* Pricing Table - Further Advice With Buttons 
 
 .pricing-table-further-advice{margin-bottom: 30px!important;
@@ -280,7 +288,7 @@ iframe{border:none!important;}
 					select{padding:15px 20px!important;height:64px!important;margin:0!important;.form-borders();font-size:20px!important;color:@blue;
 						option{color:@blue;}
 					}
-					textarea{.border-radius (@border-radius: 10px);padding-top:20px!important;font-family:"Source Sans Pro";font-size:20px!important;
+					textarea{.border-radius (@border-radius: 10px);padding-top:20px!important;font-family:"Source Sans Pro";font-size:20px!important;height:200px!important;
 						&:focus{outline:none;background:#FFFDE4!important;.transition();box-shadow:none;border-color:@blue!important;color:@blue;}
 					}
 					.name_first, .name_last{
@@ -325,7 +333,7 @@ iframe{border:none!important;}
 
 /* Form on White BG */
 
-.teal-full{
+.teal-full{z-index: 10000;
 	.gform_wrapper{margin:0 auto!important;
 		.gform_body{width:100%!important;
 			.gform_fields{
@@ -382,16 +390,36 @@ iframe{border:none!important;}
 		.fusion-column-wrapper{padding:0px 40px!important;}
 	}
 	
-	.fusion-header{
-		.fusion-main-menu{
-			ul{
-				li{
-					a{padding:6px 15px;
-					}
+	
+	.fusion-mobile-menu-design-modern{
+		.fusion-header{
+			.fusion-row{padding-top: 10px!important; padding-bottom: 10px!important;
+				.fusion-mobile-menu-icons{
+					a{font-size:26px; padding: 7px 0px;}
 				}
+				.fusion-mobile-nav-holder{
+					
+					&:hover{color: @white;}
+					
+					.fusion-mobile-nav-item{
+						a{font-weight:600;
+							&:hover{color: @white;}
+						}
+					}
+					
+					.fusion-mobile-current-nav-item{
+						a{font-weight:600; background-color: @grey;
+							&:hover{color: @blue;}
+						}
+					}
+					
+
+				}
+				
 			}
 		}
 	}
+	
 	
 	
 	/* Pricing Table - Further Advice */
